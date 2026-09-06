@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Edwin Adolfo · Film Director. Cinematic films for brands, fashion and events. Spain · Portugal · France.">
+<title>Adolfo Studio · Film Director</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #0A0A0A;
+  --carbon: #111111;
+  --carbon2: #161616;
+  --gold: #C8A820;
+  --gold-dim: #7A6010;
+  --ivory: #F5F2EB;
+  --ash: #9A9890;
+  --ash-light: #C4C2BA;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #0A0A0A;
+  color: #F5F2EB;
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ═══ NAV ═══ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(200, 168, 32, 0.12);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-name {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #F5F2EB;
+}
+
+.nav-cta {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #C8A820;
+  text-decoration: none;
+  padding: 8px 18px;
+  border: 1px solid rgba(200, 168, 32, 0.5);
+  transition: all 0.25s;
+}
+
+.nav-cta:hover {
+  background: #C8A820;
+  color: #0A0A0A;
+}
+
+/* ═══ HERO ═══ */
+#hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 28px 90px;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #C8A820;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-size: clamp(48px, 12vw, 100px);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #F5F2EB;
+  margin-bottom: 0;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: #C4C2BA;
+}
+
+.hero-title strong {
+  font-weight: 600;
+  color: #F5F2EB;
+}
+
+.hero-rule {
+  width: 50px;
+  height: 1px;
+  background: #C8A820;
+  margin: 34px 0;
+}
+
+.hero-sub {
+  font-size: 18px;
+  font-weight: 300;
+  color: #9A9890;
+  line-height: 1.75;
+  max-width: 440px;
+}
+
+.hero-sub strong {
+  color: #F5F2EB;
+  font-weight: 400;
+}
+
+.hero-geo {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9A9890;
+}
+
+.geo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.geo-flag {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.geo-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(200, 168, 32, 0.4);
+}
+
+/* ═══ MANIFESTO ═══ */
+#manifesto {
+  padding: 80px 28px;
+  border-top: 1px solid rgba(200, 168, 32, 0.15);
+  border-bottom: 1px solid rgba(200, 168, 32, 0.15);
+}
+
+.manifesto-text {
+  font-size: clamp(26px, 6vw, 46px);
+  font-weight: 300;
+  line-height: 1.3;
+  color: #F5F2EB;
+  max-width: 800px;
+}
+
+.manifesto-text em {
+  font-style: italic;
+  color: #C4C2BA;
+}
+
+/* ═══ SECTION LABEL ═══ */
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #C8A820;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.section-label::after {
+  content: '';
+  width: 44px;
+  height: 1px;
+  background: rgba(200, 168, 32, 0.5);
+}
+
+/* ═══ WORK ═══ */
+#work {
+  background: #111111;
+  padding: 84px 0 0;
+}
+
+.work-header { padding: 0 28px 36px; }
+
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+}
+
+@media (min-width: 640px) {
+  .work-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.work-card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .work-card { aspect-ratio: 2 / 3; }
+}
+
+.card-es { background: linear-gradient(155deg, #2A1410 0%, #1A0C08 50%, #0A0A0A 100%); }
+.card-pt { background: linear-gradient(155deg, #0C2410 0%, #081A0C 50%, #0A0A0A 100%); }
+.card-fr { background: linear-gradient(155deg, #101A2E 0%, #0A1020 50%, #0A0A0A 100%); }
+
+.card-flag {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 150px;
+  line-height: 1;
+  opacity: 0.22;
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.work-card:hover .card-flag {
+  opacity: 0.32;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.45) 55%, rgba(10,10,10,0.1) 100%);
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 26px 22px;
+}
+
+.card-country {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C8A820;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-country-flag { font-size: 15px; }
+
+.card-title {
+  font-size: clamp(19px, 3vw, 23px);
+  font-weight: 400;
+  color: #F5F2EB;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.card-link {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9A9890;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  transition: gap 0.3s, color 0.3s;
+}
+
+.work-card:hover .card-link {
+  gap: 16px;
+  color: #C8A820;
+}
+
+.card-line {
+  width: 22px;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s;
+}
+
+.work-card:hover .card-line { width: 34px; }
+
+.work-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 24px 28px;
+  background: #0D0D0D;
+  border-top: 1px solid rgba(154, 152, 144, 0.12);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.work-footer:hover { background: #151515; }
+
+.work-footer-label {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9A9890;
+  transition: color 0.2s;
+}
+
+.work-footer:hover .work-footer-label { color: #F5F2EB; }
+
+.work-footer-handle {
+  font-size: 17px;
+  font-style: italic;
+  color: #C8A820;
+}
+
+/* ═══ NUMBERS ═══ */
+#numbers {
+  padding: 76px 28px;
+  border-bottom: 1px solid rgba(200, 168, 32, 0.12);
+}
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.number-box {
+  padding: 34px 12px;
+  text-align: center;
+  background: #161616;
+}
+
+.number-value {
+  font-size: clamp(38px, 8vw, 62px);
+  font-weight: 300;
+  color: #F5F2EB;
+  line-height: 1;
+  display: block;
+}
+
+.number-sup {
+  font-size: 0.5em;
+  color: #C8A820;
+  vertical-align: super;
+}
+
+.number-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9A9890;
+  margin-top: 12px;
+  display: block;
+  line-height: 1.6;
+}
+
+/* ═══ SERVICES ═══ */
+#services { padding: 84px 28px; }
+
+.service-list { list-style: none; }
+
+.service-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(154, 152, 144, 0.14);
+  transition: padding-left 0.3s;
+}
+
+.service-item:first-child { border-top: 1px solid rgba(154, 152, 144, 0.14); }
+.service-item:hover { padding-left: 8px; }
+
+.service-name {
+  font-size: clamp(24px, 5.5vw, 40px);
+  font-weight: 300;
+  color: #F5F2EB;
+  letter-spacing: -0.01em;
+}
+
+.service-tag {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9A9890;
+  white-space: nowrap;
+}
+
+/* ═══ CLIENTS ═══ */
+#clients {
+  padding: 70px 28px;
+  background: #111111;
+  border-top: 1px solid rgba(200, 168, 32, 0.12);
+}
+
+.clients-label {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9A9890;
+  margin-bottom: 30px;
+}
+
+.clients-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 30px;
+}
+
+.client-name {
+  font-size: clamp(17px, 3.5vw, 25px);
+  font-weight: 300;
+  font-style: italic;
+  color: #C4C2BA;
+  transition: color 0.3s;
+}
+
+.client-name:hover { color: #F5F2EB; }
+
+/* ═══ CONTACT ═══ */
+#contact {
+  background: #161616;
+  padding: 90px 28px;
+}
+
+.contact-headline {
+  font-size: clamp(34px, 8vw, 66px);
+  font-weight: 300;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #F5F2EB;
+  margin-bottom: 16px;
+}
+
+.contact-headline em {
+  font-style: italic;
+  color: #C4C2BA;
+}
+
+.contact-sub {
+  font-size: 17px;
+  color: #9A9890;
+  font-weight: 300;
+  line-height: 1.75;
+  max-width: 450px;
+  margin-bottom: 54px;
+}
+
+/* ═══ FORM ═══ */
+.contact-form { max-width: 580px; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 520px) {
+  .form-row.two { grid-template-columns: 1fr 1fr; }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #C8A820;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(154, 152, 144, 0.3);
+  color: #F5F2EB;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #6A6862;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: #C8A820;
+  background: rgba(200, 168, 32, 0.05);
+}
+
+.form-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C8A820' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.form-select option {
+  background: #1A1A1A;
+  color: #F5F2EB;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 130px;
+  line-height: 1.65;
+}
+
+.form-submit {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 17px 38px;
+  background: #C8A820;
+  color: #0A0A0A;
+  border: none;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+@media (min-width: 420px) {
+  .form-submit { width: auto; }
+}
+
+.form-submit:hover { background: #F5F2EB; }
+.form-submit:disabled { opacity: 0.6; cursor: wait; }
+
+.form-success {
+  display: none;
+  padding: 32px 24px;
+  border: 1px solid rgba(200, 168, 32, 0.4);
+  text-align: center;
+  max-width: 580px;
+}
+
+.form-success.show { display: block; }
+
+.form-success-mark {
+  font-size: 30px;
+  color: #C8A820;
+  margin-bottom: 12px;
+}
+
+.form-success-title {
+  font-size: 22px;
+  font-weight: 300;
+  color: #F5F2EB;
+  margin-bottom: 8px;
+}
+
+.form-success-sub {
+  font-size: 15px;
+  color: #9A9890;
+}
+
+.form-alt {
+  margin-top: 34px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(154, 152, 144, 0.14);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+}
+
+.form-alt-label {
+  font-size: 12px;
+  color: #9A9890;
+}
+
+.form-alt-link {
+  font-size: 14px;
+  color: #C8A820;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.form-alt-link:hover { color: #F5F2EB; }
+
+/* ═══ FOOTER ═══ */
+footer {
+  padding: 40px 28px;
+  border-top: 1px solid rgba(154, 152, 144, 0.12);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9A9890;
+}
+
+.footer-links {
+  display: flex;
+  gap: 22px;
+}
+
+.footer-link {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9A9890;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-link:hover { color: #C8A820; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">
+    <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+      <circle cx="14" cy="14" r="13" stroke="#C8A820" stroke-width="0.8"/>
+      <circle cx="14" cy="14" r="6" stroke="#C8A820" stroke-width="0.7"/>
+      <line x1="14" y1="1" x2="14" y2="8" stroke="#C8A820" stroke-width="0.8"/>
+      <line x1="14" y1="20" x2="14" y2="27" stroke="#C8A820" stroke-width="0.8"/>
+      <line x1="1" y1="14" x2="8" y2="14" stroke="#C8A820" stroke-width="0.8"/>
+      <line x1="20" y1="14" x2="27" y2="14" stroke="#C8A820" stroke-width="0.8"/>
+      <line x1="4" y1="4" x2="8.5" y2="8.5" stroke="#C8A820" stroke-width="0.6"/>
+      <line x1="19.5" y1="19.5" x2="24" y2="24" stroke="#C8A820" stroke-width="0.6"/>
+      <line x1="24" y1="4" x2="19.5" y2="8.5" stroke="#C8A820" stroke-width="0.6"/>
+      <line x1="8.5" y1="19.5" x2="4" y2="24" stroke="#C8A820" stroke-width="0.6"/>
+    </svg>
+    <span class="nav-name">Adolfo Studio</span>
+  </a>
+  <a href="#contact" class="nav-cta">Start a project</a>
+</nav>
+
+<section id="hero">
+  <p class="hero-eyebrow">Film Director · Madrid</p>
+  <h1 class="hero-title">We <em>don't</em><br>make <strong>videos.</strong><br>We make <em>films.</em></h1>
+  <div class="hero-rule"></div>
+  <p class="hero-sub">Cinematic productions for <strong>brands, events and organisations</strong> that deserve to be remembered.</p>
+  <div class="hero-geo">
+    <span class="geo-item"><span class="geo-flag">🇪🇸</span> Spain</span>
+    <span class="geo-divider"></span>
+    <span class="geo-item"><span class="geo-flag">🇵🇹</span> Portugal</span>
+    <span class="geo-divider"></span>
+    <span class="geo-item"><span class="geo-flag">🇫🇷</span> France</span>
+  </div>
+</section>
+
+<section id="manifesto">
+  <p class="manifesto-text">Every brand has a story.<br>Most brands never <em>tell it right.</em><br>We fix that — in three countries.</p>
+</section>
+
+<section id="work">
+  <div class="work-header">
+    <p class="section-label">Selected work</p>
+  </div>
+  <div class="work-grid">
+    <a href="https://www.instagram.com/adolfostudio" target="_blank" rel="noopener" class="work-card card-es">
+      <div class="card-flag">🇪🇸</div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <p class="card-country"><span class="card-country-flag">🇪🇸</span> Spain · Madrid</p>
+        <h3 class="card-title">Miss Teen Spain<br>Gala Final</h3>
+        <span class="card-link"><span class="card-line"></span>Watch film</span>
+      </div>
+    </a>
+    <a href="https://www.instagram.com/adolfostudio" target="_blank" rel="noopener" class="work-card card-pt">
+      <div class="card-flag">🇵🇹</div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <p class="card-country"><span class="card-country-flag">🇵🇹</span> Portugal · Lisboa</p>
+        <h3 class="card-title">Miss Best Portugal<br>Grande Final</h3>
+        <span class="card-link"><span class="card-line"></span>Watch film</span>
+      </div>
+    </a>
+    <a href="https://www.instagram.com/adolfostudio" target="_blank" rel="noopener" class="work-card card-fr">
+      <div class="card-flag">🇫🇷</div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <p class="card-country"><span class="card-country-flag">🇫🇷</span> France · Paris</p>
+        <h3 class="card-title">Backstage<br>Paris</h3>
+        <span class="card-link"><span class="card-line"></span>Watch film</span>
+      </div>
+    </a>
+  </div>
+  <a href="https://www.instagram.com/adolfostudio" target="_blank" rel="noopener" class="work-footer">
+    <span class="work-footer-label">View full portfolio</span>
+    <span class="work-footer-handle">@adolfostudio</span>
+  </a>
+</section>
+
+<section id="numbers">
+  <div class="numbers-grid">
+    <div class="number-box">
+      <span class="number-value">3<span class="number-sup">+</span></span>
+      <span class="number-label">Countries<br>of operation</span>
+    </div>
+    <div class="number-box">
+      <span class="number-value">5<span class="number-sup">+</span></span>
+      <span class="number-label">Major clients<br>and productions</span>
+    </div>
+    <div class="number-box">
+      <span class="number-value">10<span class="number-sup">K</span></span>
+      <span class="number-label">Monthly<br>film views</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <p class="section-label">What we make</p>
+  <ul class="service-list">
+    <li class="service-item"><span class="service-name">Brand films</span><span class="service-tag">Marcas</span></li>
+    <li class="service-item"><span class="service-name">Fashion &amp; editorial</span><span class="service-tag">Moda</span></li>
+    <li class="service-item"><span class="service-name">Galas &amp; events</span><span class="service-tag">Eventos</span></li>
+    <li class="service-item"><span class="service-name">Social narrative</span><span class="service-tag">ONG</span></li>
+    <li class="service-item"><span class="service-name">Pageants &amp; beauty</span><span class="service-tag">Certámenes</span></li>
+  </ul>
+</section>
+
+<section id="clients">
+  <p class="clients-label">Trusted by</p>
+  <div class="clients-list">
+    <span class="client-name">Miss Universe Madrid</span>
+    <span class="client-name">Miss Best Portugal</span>
+    <span class="client-name">Miss Teen Spain</span>
+    <span class="client-name">Inti de Oro</span>
+    <span class="client-name">Refugiados sin Fronteras</span>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="contact-headline">Does your brand<br>deserve to be<br><em>remembered?</em></h2>
+  <p class="contact-sub">Tell us about your project. We work across Spain, Portugal and France and respond within 24 hours.</p>
+
+  <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <div class="form-row two">
+      <div class="form-group">
+        <label class="form-label" for="name">Name</label>
+        <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+      </div>
+    </div>
+    <div class="form-row two">
+      <div class="form-group">
+        <label class="form-label" for="company">Company / Brand</label>
+        <input class="form-input" type="text" id="company" name="company" placeholder="Your brand or event">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="country">Country</label>
+        <select class="form-select" id="country" name="country">
+          <option value="">Select country</option>
+          <option>Spain</option>
+          <option>Portugal</option>
+          <option>France</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label" for="service">Type of production</label>
+        <select class="form-select" id="service" name="service">
+          <option value="">What do you need?</option>
+          <option>Brand film</option>
+          <option>Fashion &amp; editorial</option>
+          <option>Gala or event</option>
+          <option>Pageant or beauty</option>
+          <option>Social narrative / NGO</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label" for="message">Tell us about your project</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="What do you want to create? Any dates, locations or references that help us understand your vision…"></textarea>
+      </div>
+    </div>
+    <input type="hidden" name="_subject" value="New project enquiry — Adolfo Studio">
+    <button type="submit" class="form-submit" id="submitBtn">Send enquiry &nbsp;→</button>
+  </form>
+
+  <div class="form-success" id="formSuccess">
+    <div class="form-success-mark">◈</div>
+    <div class="form-success-title">Message received.</div>
+    <div class="form-success-sub">We'll be in touch within 24 hours.</div>
+  </div>
+
+  <div class="form-alt">
+    <span class="form-alt-label">Prefer direct contact?</span>
+    <a href="mailto:adolfoestudio@gmail.com" class="form-alt-link">adolfoestudio@gmail.com</a>
+    <a href="https://wa.me/34617969909" target="_blank" rel="noopener" class="form-alt-link">WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-brand">© 2026 Adolfo Studio · Edwin Adolfo</span>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/adolfostudio" target="_blank" rel="noopener" class="footer-link">Instagram</a>
+    <a href="https://wa.me/34617969909" target="_blank" rel="noopener" class="footer-link">WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var form = document.getElementById('contactForm');
+  var success = document.getElementById('formSuccess');
+  var btn = document.getElementById('submitBtn');
+  if (!form) return;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(res) {
+      if (res.ok) {
+        form.style.display = 'none';
+        success.classList.add('show');
+      } else {
+        btn.disabled = false;
+        btn.innerHTML = 'Error — try again &nbsp;→';
+      }
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.innerHTML = 'Error — try again &nbsp;→';
+    });
+  });
+})();
+</script>
+</body>
+</html>
