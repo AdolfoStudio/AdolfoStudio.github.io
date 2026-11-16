@@ -63,18 +63,39 @@ Credenciales locales (fuera del proyecto): el token de GitHub está en el llaver
 - En el código: `git revert <commit>` y `git push` (Cloudflare publica la versión revertida).
 - Listar despliegues desde la terminal: `npx wrangler pages deployment list --project-name edwinadolfo`.
 
-## 6. Dominios y DNS — plan de puesta en producción (pendiente de aprobación)
+## 6. Dominios y DNS — configuración en producción (activa desde el 16-11-2026)
 
-Estado actual: las zonas `edwinadolfo.com` y `adolfo-studio.com` están activas en Cloudflare y vacías (sin registros A, MX ni TXT). No hay correo configurado que proteger.
+Antes de configurar, ambas zonas estaban vacías (sin registros A, MX ni TXT): no había correo ni otros servicios que proteger. No se borró ningún registro.
 
-Pasos cuando se apruebe la preview:
+**edwinadolfo.com** (zona en Cloudflare, plan Free)
 
-1. **edwinadolfo.com** — Pages → `edwinadolfo` → Custom domains → *Set up a custom domain* → `edwinadolfo.com`. Cloudflare crea el registro DNS (proxied) y el certificado SSL automáticamente.
-2. **www.edwinadolfo.com** — añadirlo también como custom domain y crear en la zona `edwinadolfo.com` una *Redirect Rule* (plantilla "Redirect from WWW to root"): `www.edwinadolfo.com/*` → `https://edwinadolfo.com/${1}`, 301, conservando la query.
-3. **HTTPS** — SSL/TLS → Edge Certificates → *Always Use HTTPS*: activado. HSTS: activarlo solo cuando todo esté verificado (es difícil de revertir).
-4. **adolfo-studio.com** — en su zona, crear registros `A @ 192.0.2.1` y `A www 192.0.2.1` con proxy activado (marcador estándar; el tráfico nunca llega a esa IP) y una *Redirect Rule*: si el host es `adolfo-studio.com` o `www.adolfo-studio.com` → 301 a `https://edwinadolfo.com/studio`. No se crea ninguna web independiente.
-5. Verificar: `http://`, `https://`, `www` y `adolfo-studio.com` terminan en `https://edwinadolfo.com` sin bucles; certificado válido; `/studio` llega a la sección del estudio.
-6. Opcional después del lanzamiento: sustituir la web antigua de `main` (adolfostudio.github.io) por una redirección a `https://edwinadolfo.com`, y enviar el sitemap en Google Search Console.
+| Registro / ajuste | Valor | Creado por |
+|---|---|---|
+| `CNAME @` | `edwinadolfo.pages.dev` (proxied) | Pages → Custom domains |
+| `CNAME www` | `edwinadolfo.pages.dev` (proxied) | Pages → Custom domains |
+| Redirect Rule "www.edwinadolfo.com to edwinadolfo.com" | `*://www.edwinadolfo.com/*` → `https://edwinadolfo.com/${2}`, 301, conserva la query | Rules → Redirect Rules |
+| Always Use HTTPS | Activado | SSL/TLS → Edge Certificates |
+| HSTS | Desactivado (activarlo solo tras unas semanas estable; difícil de revertir) | — |
+
+**adolfo-studio.com** (zona en Cloudflare, plan Free)
+
+| Registro / ajuste | Valor | Motivo |
+|---|---|---|
+| `A @` | `192.0.2.1` (proxied) | Marcador estándar para que Cloudflare atienda el dominio; el tráfico nunca llega a esa IP |
+| `A www` | `192.0.2.1` (proxied) | Ídem |
+| Redirect Rule "adolfo-studio.com to edwinadolfo.com/studio" | Todas las peticiones → `https://edwinadolfo.com/studio`, 301 | Sin web independiente; `/studio` → `/#studio` |
+
+**Verificado el 16-11-2026**
+
+- `http://edwinadolfo.com`, `http://www…` y `https://www…/ruta?query` → `https://edwinadolfo.com/ruta?query` (máx. 1 salto).
+- Cualquier URL de `adolfo-studio.com` / `www.adolfo-studio.com` → `https://edwinadolfo.com/#studio` (2 saltos), sin bucles.
+- Certificados válidos (renovación automática) para los cuatro nombres.
+- `edwinadolfo.com` indexable (sin `X-Robots-Tag`), canonical correcto, `sitemap.xml` y `robots.txt` accesibles; `*.pages.dev` sigue con `noindex`.
+- Vídeos con rangos (206) también en el dominio definitivo.
+
+Para deshacer la puesta en producción: Pages → Custom domains → quitar `edwinadolfo.com`/`www`; en `adolfo-studio.com`, desactivar la Redirect Rule. Ningún cambio es irreversible.
+
+Pendiente opcional: sustituir la web antigua de `main` (adolfostudio.github.io) por una redirección a `https://edwinadolfo.com`, y dar de alta el dominio y el sitemap en Google Search Console.
 
 ## 7. Riesgos y pendientes
 
