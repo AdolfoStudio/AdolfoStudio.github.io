@@ -1,11 +1,12 @@
 // Edwin Adolfo × Adolfo Studio — static site generator.
 // No dependencies. Run:  node build.mjs
-// Edit the content below, run the build, commit the generated HTML.
+// Edit the content below, run the build, commit the generated HTML (written to ./public).
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
+const OUT = join(ROOT, 'public'); // published directory (Cloudflare Pages: pages_build_output_dir)
 const SITE = 'https://edwinadolfo.com';
 const EMAIL = 'adolfoestudio@gmail.com';
 const WHATSAPP = 'https://wa.me/34617969909';
@@ -567,7 +568,7 @@ ${footer(L)}`;
 
 /* ───────────── Write ───────────── */
 function out(path, html) {
-  const file = join(ROOT, path, 'index.html');
+  const file = join(OUT, path, 'index.html');
   mkdirSync(dirname(file), { recursive: true });
   writeFileSync(file, html);
 }
@@ -601,7 +602,7 @@ ${header(L, '/es/', false)}
 </main>
 ${footer(L)}`;
 }
-writeFileSync(join(ROOT, '404.html'), notFound());
+writeFileSync(join(OUT, '404.html'), notFound());
 
 for (const L of [t.en, t.es]) {
   out(L.home, home(L));
@@ -610,6 +611,6 @@ for (const L of [t.en, t.es]) {
 const pairs = [[t.en.home, t.es.home], ...projects.map((p) => [urlOf(p, t.en), urlOf(p, t.es)])];
 const urls = pairs.flat();
 const alt = ([en, es]) => `<xhtml:link rel="alternate" hreflang="en" href="${SITE}${en}"/><xhtml:link rel="alternate" hreflang="es" href="${SITE}${es}"/><xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${en}"/>`;
-writeFileSync(join(ROOT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${pairs.flatMap((pr) => pr.map((u) => `  <url><loc>${SITE}${u}</loc>${alt(pr)}</url>`)).join('\n')}\n</urlset>\n`);
-writeFileSync(join(ROOT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
+writeFileSync(join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${pairs.flatMap((pr) => pr.map((u) => `  <url><loc>${SITE}${u}</loc>${alt(pr)}</url>`)).join('\n')}\n</urlset>\n`);
+writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 console.log(`Built ${urls.length} pages.`);
