@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects — https://developers.cloudflare.com/pages/configuration/redirects/
+# Short links to the Adolfo Studio section (also the landing target for adolfo-studio.com).
+/studio      /#studio      301
+/es/estudio  /es/#studio   301

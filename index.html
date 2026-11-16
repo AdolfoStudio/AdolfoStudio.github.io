@@ -1,922 +1,273 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Edwin Adolfo · Film Director. Cinematic films for brands, campaigns and live events across Spain, Portugal and France.">
-<title>Adolfo Studio · Film Director</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edwin Adolfo — Creative Director &amp; Fashion Filmmaker</title>
+<meta name="description" content="Creative director and fashion filmmaker based in Madrid, working worldwide. Fashion films, brand films and creative direction, produced by Adolfo Studio.">
+<link rel="canonical" href="https://edwinadolfo.com/">
+<link rel="alternate" hreflang="en" href="https://edwinadolfo.com/">
+<link rel="alternate" hreflang="es" href="https://edwinadolfo.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://edwinadolfo.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Edwin Adolfo × Adolfo Studio">
+<meta property="og:title" content="Edwin Adolfo — Creative Director &amp; Fashion Filmmaker">
+<meta property="og:description" content="Creative director and fashion filmmaker based in Madrid, working worldwide. Fashion films, brand films and creative direction, produced by Adolfo Studio.">
+<meta property="og:url" content="https://edwinadolfo.com/">
+<meta property="og:image" content="https://edwinadolfo.com/assets/films/ro/poster.jpg">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111'/%3E%3Ctext x='16' y='21' font-family='Arial,sans-serif' font-weight='700' font-size='13' text-anchor='middle' fill='%23E9E5DD'%3EEA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --black: #0A0A0A;
-  --carbon: #111111;
-  --carbon2: #161616;
-  --gold: #C8A820;
-  --gold-dim: #7A6010;
-  --ivory: #F5F2EB;
-  --ash: #9A9890;
-  --ash-light: #C4C2BA;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: #0A0A0A;
-  color: #F5F2EB;
-  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* ═══ NAV ═══ */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 28px;
-  background: rgba(10, 10, 10, 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(200, 168, 32, 0.12);
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.nav-name {
-  font-size: 13px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #F5F2EB;
-}
-
-.nav-cta {
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #C8A820;
-  text-decoration: none;
-  padding: 8px 18px;
-  border: 1px solid rgba(200, 168, 32, 0.5);
-  transition: all 0.25s;
-}
-
-.nav-cta:hover {
-  background: #C8A820;
-  color: #0A0A0A;
-}
-
-/* ═══ HERO ═══ */
-#hero {
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 140px 28px 90px;
-}
-
-.hero-eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: #C8A820;
-  margin-bottom: 24px;
-}
-
-.hero-title {
-  font-size: clamp(48px, 12vw, 100px);
-  font-weight: 300;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  color: #F5F2EB;
-  margin-bottom: 0;
-}
-
-.hero-title em {
-  font-style: italic;
-  color: #C4C2BA;
-}
-
-.hero-title strong {
-  font-weight: 600;
-  color: #F5F2EB;
-}
-
-.hero-rule {
-  width: 50px;
-  height: 1px;
-  background: #C8A820;
-  margin: 34px 0;
-}
-
-.hero-sub {
-  font-size: 18px;
-  font-weight: 300;
-  color: #9A9890;
-  line-height: 1.75;
-  max-width: 440px;
-}
-
-.hero-sub strong {
-  color: #F5F2EB;
-  font-weight: 400;
-}
-
-.hero-geo {
-  margin-top: 40px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #9A9890;
-}
-
-.geo-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.geo-flag {
-  font-size: 22px;
-  line-height: 1;
-}
-
-.geo-divider {
-  width: 1px;
-  height: 16px;
-  background: rgba(200, 168, 32, 0.4);
-}
-
-/* ═══ MANIFESTO ═══ */
-#manifesto {
-  padding: 80px 28px;
-  border-top: 1px solid rgba(200, 168, 32, 0.15);
-  border-bottom: 1px solid rgba(200, 168, 32, 0.15);
-}
-
-.manifesto-text {
-  font-size: clamp(26px, 6vw, 46px);
-  font-weight: 300;
-  line-height: 1.3;
-  color: #F5F2EB;
-  max-width: 800px;
-}
-
-.manifesto-text em {
-  font-style: italic;
-  color: #C4C2BA;
-}
-
-/* ═══ SECTION LABEL ═══ */
-.section-label {
-  font-size: 10px;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: #C8A820;
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.section-label::after {
-  content: '';
-  width: 44px;
-  height: 1px;
-  background: rgba(200, 168, 32, 0.5);
-}
-
-/* ═══ WORK ═══ */
-#work {
-  background: #111111;
-  padding: 84px 0 0;
-}
-
-.work-header { padding: 0 28px 36px; }
-
-.work-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3px;
-}
-
-@media (min-width: 640px) {
-  .work-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-.work-card {
-  position: relative;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  text-decoration: none;
-  display: block;
-}
-
-@media (min-width: 640px) {
-  .work-card { aspect-ratio: 2 / 3; }
-}
-
-.card-es { background: linear-gradient(155deg, #2A1410 0%, #1A0C08 50%, #0A0A0A 100%); }
-.card-pt { background: linear-gradient(155deg, #0C2410 0%, #081A0C 50%, #0A0A0A 100%); }
-.card-fr { background: linear-gradient(155deg, #101A2E 0%, #0A1020 50%, #0A0A0A 100%); }
-
-.card-flag {
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 150px;
-  line-height: 1;
-  opacity: 0.22;
-  transition: opacity 0.4s, transform 0.4s;
-}
-
-.work-card:hover .card-flag {
-  opacity: 0.32;
-  transform: translate(-50%, -50%) scale(1.05);
-}
-
-.card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.45) 55%, rgba(10,10,10,0.1) 100%);
-}
-
-.card-content {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 26px 22px;
-}
-
-.card-country {
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #C8A820;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.card-country-flag { font-size: 15px; }
-
-.card-title {
-  font-size: clamp(19px, 3vw, 23px);
-  font-weight: 400;
-  color: #F5F2EB;
-  line-height: 1.25;
-  margin-bottom: 14px;
-}
-
-.card-link {
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #9A9890;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  transition: gap 0.3s, color 0.3s;
-}
-
-.work-card:hover .card-link {
-  gap: 16px;
-  color: #C8A820;
-}
-
-.card-line {
-  width: 22px;
-  height: 1px;
-  background: currentColor;
-  transition: width 0.3s;
-}
-
-.work-card:hover .card-line { width: 34px; }
-
-.work-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 24px 28px;
-  background: #0D0D0D;
-  border-top: 1px solid rgba(154, 152, 144, 0.12);
-  text-decoration: none;
-  transition: background 0.2s;
-}
-
-.work-footer:hover { background: #151515; }
-
-.work-footer-label {
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #9A9890;
-  transition: color 0.2s;
-}
-
-.work-footer:hover .work-footer-label { color: #F5F2EB; }
-
-.work-footer-handle {
-  font-size: 17px;
-  font-style: italic;
-  color: #C8A820;
-}
-
-
-.card-desc {
-  font-size: 13px;
-  font-weight: 300;
-  color: #C4C2BA;
-  line-height: 1.55;
-  margin-bottom: 12px;
-}
-
-.card-credit {
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #6E6C66;
-  margin-bottom: 14px;
-}
-
-.card-title {
-  margin-bottom: 8px !important;
-}
-
-/* ═══ NUMBERS ═══ */
-#numbers {
-  padding: 76px 28px;
-  border-bottom: 1px solid rgba(200, 168, 32, 0.12);
-}
-
-.numbers-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
-}
-
-.number-box {
-  padding: 34px 12px;
-  text-align: center;
-  background: #161616;
-}
-
-.number-value {
-  font-size: clamp(38px, 8vw, 62px);
-  font-weight: 300;
-  color: #F5F2EB;
-  line-height: 1;
-  display: block;
-}
-
-.number-sup {
-  font-size: 0.5em;
-  color: #C8A820;
-  vertical-align: super;
-}
-
-.number-label {
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #9A9890;
-  margin-top: 12px;
-  display: block;
-  line-height: 1.6;
-}
-
-/* ═══ SERVICES ═══ */
-#services { padding: 84px 28px; }
-
-.service-list { list-style: none; }
-
-.service-item {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(154, 152, 144, 0.14);
-  transition: padding-left 0.3s;
-}
-
-.service-item:first-child { border-top: 1px solid rgba(154, 152, 144, 0.14); }
-.service-item:hover { padding-left: 8px; }
-
-.service-name {
-  font-size: clamp(24px, 5.5vw, 40px);
-  font-weight: 300;
-  color: #F5F2EB;
-  letter-spacing: -0.01em;
-}
-
-.service-tag {
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #9A9890;
-  white-space: nowrap;
-}
-
-/* ═══ CLIENTS ═══ */
-#clients {
-  padding: 70px 28px;
-  background: #111111;
-  border-top: 1px solid rgba(200, 168, 32, 0.12);
-}
-
-.clients-label {
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #9A9890;
-  margin-bottom: 30px;
-}
-
-.clients-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 30px;
-}
-
-.client-name {
-  font-size: clamp(17px, 3.5vw, 25px);
-  font-weight: 300;
-  font-style: italic;
-  color: #C4C2BA;
-  transition: color 0.3s;
-}
-
-.client-name:hover { color: #F5F2EB; }
-
-/* ═══ CONTACT ═══ */
-#contact {
-  background: #161616;
-  padding: 90px 28px;
-}
-
-.contact-headline {
-  font-size: clamp(34px, 8vw, 66px);
-  font-weight: 300;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-  color: #F5F2EB;
-  margin-bottom: 16px;
-}
-
-.contact-headline em {
-  font-style: italic;
-  color: #C4C2BA;
-}
-
-.contact-sub {
-  font-size: 17px;
-  color: #9A9890;
-  font-weight: 300;
-  line-height: 1.75;
-  max-width: 450px;
-  margin-bottom: 54px;
-}
-
-/* ═══ FORM ═══ */
-.contact-form { max-width: 580px; }
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-@media (min-width: 520px) {
-  .form-row.two { grid-template-columns: 1fr 1fr; }
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-label {
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #C8A820;
-}
-
-.form-input,
-.form-select,
-.form-textarea {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(154, 152, 144, 0.3);
-  color: #F5F2EB;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 16px;
-  font-weight: 300;
-  padding: 14px 16px;
-  outline: none;
-  transition: border-color 0.2s, background 0.2s;
-  border-radius: 0;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-}
-
-.form-input::placeholder,
-.form-textarea::placeholder {
-  color: #6A6862;
-}
-
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
-  border-color: #C8A820;
-  background: rgba(200, 168, 32, 0.05);
-}
-
-.form-select {
-  cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C8A820' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  padding-right: 40px;
-}
-
-.form-select option {
-  background: #1A1A1A;
-  color: #F5F2EB;
-}
-
-.form-textarea {
-  resize: vertical;
-  min-height: 130px;
-  line-height: 1.65;
-}
-
-.form-submit {
-  margin-top: 24px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 17px 38px;
-  background: #C8A820;
-  color: #0A0A0A;
-  border: none;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-  width: 100%;
-}
-
-@media (min-width: 420px) {
-  .form-submit { width: auto; }
-}
-
-.form-submit:hover { background: #F5F2EB; }
-.form-submit:disabled { opacity: 0.6; cursor: wait; }
-
-.form-success {
-  display: none;
-  padding: 32px 24px;
-  border: 1px solid rgba(200, 168, 32, 0.4);
-  text-align: center;
-  max-width: 580px;
-}
-
-.form-success.show { display: block; }
-
-.form-success-mark {
-  font-size: 30px;
-  color: #C8A820;
-  margin-bottom: 12px;
-}
-
-.form-success-title {
-  font-size: 22px;
-  font-weight: 300;
-  color: #F5F2EB;
-  margin-bottom: 8px;
-}
-
-.form-success-sub {
-  font-size: 15px;
-  color: #9A9890;
-}
-
-.form-alt {
-  margin-top: 34px;
-  padding-top: 26px;
-  border-top: 1px solid rgba(154, 152, 144, 0.14);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  align-items: center;
-}
-
-.form-alt-label {
-  font-size: 12px;
-  color: #9A9890;
-}
-
-.form-alt-link {
-  font-size: 14px;
-  color: #C8A820;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.form-alt-link:hover { color: #F5F2EB; }
-
-/* ═══ FOOTER ═══ */
-footer {
-  padding: 40px 28px;
-  border-top: 1px solid rgba(154, 152, 144, 0.12);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-brand {
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #9A9890;
-}
-
-.footer-links {
-  display: flex;
-  gap: 22px;
-}
-
-.footer-link {
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #9A9890;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.footer-link:hover { color: #C8A820; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://edwinadolfo.com/#edwin","name":"Edwin Adolfo","jobTitle":"Creative Director & Filmmaker","description":"Creative director and fashion filmmaker based in Madrid, working worldwide. Fashion films, brand films and creative direction, produced by Adolfo Studio.","url":"https://edwinadolfo.com/","homeLocation":{"@type":"Place","name":"Madrid"},"knowsAbout":["Creative direction","Film direction","Fashion film","Brand film","Visual storytelling"],"affiliation":{"@id":"https://edwinadolfo.com/#studio"}},{"@type":"Organization","@id":"https://edwinadolfo.com/#studio","name":"Adolfo Studio","url":"https://edwinadolfo.com/","email":"adolfoestudio@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Madrid","addressCountry":"ES"},"areaServed":"Worldwide","sameAs":["https://www.instagram.com/adolfostudio/"]},{"@type":"WebSite","@id":"https://edwinadolfo.com/#website","url":"https://edwinadolfo.com/","name":"Edwin Adolfo × Adolfo Studio","inLanguage":"en"}]}</script>
 </head>
-<body>
-
-<nav>
-  <a href="#hero" class="nav-logo">
-    <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
-      <circle cx="14" cy="14" r="13" stroke="#C8A820" stroke-width="0.8"/>
-      <circle cx="14" cy="14" r="6" stroke="#C8A820" stroke-width="0.7"/>
-      <line x1="14" y1="1" x2="14" y2="8" stroke="#C8A820" stroke-width="0.8"/>
-      <line x1="14" y1="20" x2="14" y2="27" stroke="#C8A820" stroke-width="0.8"/>
-      <line x1="1" y1="14" x2="8" y2="14" stroke="#C8A820" stroke-width="0.8"/>
-      <line x1="20" y1="14" x2="27" y2="14" stroke="#C8A820" stroke-width="0.8"/>
-      <line x1="4" y1="4" x2="8.5" y2="8.5" stroke="#C8A820" stroke-width="0.6"/>
-      <line x1="19.5" y1="19.5" x2="24" y2="24" stroke="#C8A820" stroke-width="0.6"/>
-      <line x1="24" y1="4" x2="19.5" y2="8.5" stroke="#C8A820" stroke-width="0.6"/>
-      <line x1="8.5" y1="19.5" x2="4" y2="24" stroke="#C8A820" stroke-width="0.6"/>
-    </svg>
-    <span class="nav-name">Adolfo Studio</span>
+<body class="home">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="/" aria-label="Edwin Adolfo × Adolfo Studio">
+    <span class="brand-sig">Edwin Adolfo</span>
+    <span class="brand-std">× Adolfo Studio</span>
   </a>
-  <a href="#contact" class="nav-cta">Start a project</a>
-</nav>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-open="Menu" data-close="Close">Menu</button>
+  <nav id="nav" class="nav" aria-label="Menu">
+    <ul><li><a href="#work">Work</a></li><li><a href="#perspective">Perspective</a></li><li><a href="#studio">Studio</a></li><li><a href="#edwin">Edwin</a></li><li><a href="#contact">Contact</a></li><li><a class="lang" href="/es/" hreflang="es" lang="es" aria-label="Español">ES</a></li></ul>
+  </nav>
+</header>
+<main id="main">
 
-<section id="hero">
-  <p class="hero-eyebrow">Film Director · Madrid</p>
-  <h1 class="hero-title">We <em>don't</em><br>make <strong>videos.</strong><br>We make <em>films.</em></h1>
-  <div class="hero-rule"></div>
-  <p class="hero-sub">Cinematic films for <strong>brands, campaigns and live events</strong> across Europe. Shot like cinema. Delivered like advertising.</p>
-  <div class="hero-geo">
-    <span class="geo-item"><span class="geo-flag">🇪🇸</span> Spain</span>
-    <span class="geo-divider"></span>
-    <span class="geo-item"><span class="geo-flag">🇵🇹</span> Portugal</span>
-    <span class="geo-divider"></span>
-    <span class="geo-item"><span class="geo-flag">🇫🇷</span> France</span>
+<section class="hero" aria-label="Edwin Adolfo">
+  <video class="hero-video" muted loop playsinline preload="metadata" poster="/assets/films/ro/poster.jpg" data-hero data-src="/assets/films/ro/hero.mp4" data-src-hd="/assets/films/ro/hero-hd.mp4" aria-hidden="true" tabindex="-1"></video>
+  <div class="hero-shade"></div>
+  <div class="hero-top">
+    <p class="mono">Creative director · Filmmaker</p>
+    <p class="mono hero-meta"><span>Madrid — Worldwide</span><span class="hero-tc" aria-hidden="true" data-tc>00:00:00:00</span></p>
+  </div>
+  <div class="hero-bottom">
+    <div class="hero-row">
+      <p class="hero-credit"><span class="mono">A film by</span></p>
+      <a class="hero-now" href="/work/the-world-outside/">
+        <span class="mono">Now playing</span>
+        <span class="hero-now-title">The World Outside</span>
+        <span class="mono">Paris, 2026 · Watch the film ↗</span>
+      </a>
+    </div>
+    <h1 class="wordmark"><span>Edwin</span> <span>Adolfo</span></h1>
+    <p class="hero-std"><span class="mono">Produced by</span> <strong>Adolfo Studio</strong></p>
   </div>
 </section>
 
-<section id="manifesto">
-  <p class="manifesto-text">Every brand has a story.<br>Most never <em>tell it right.</em><br>We direct the difference.</p>
-</section>
-
-<section id="work">
-  <div class="work-header">
-    <p class="section-label">Selected work</p>
-  </div>
+<section id="work" class="work">
+  <header class="sec-head">
+    <p class="mono label">01 — Selected</p>
+    <h2 class="sec-title">Signed work.</h2>
+  </header>
   <div class="work-grid">
-    <a href="https://www.instagram.com/adolfostudio" target="_blank" rel="noopener" class="work-card card-es">
-      <div class="card-flag">🇪🇸</div>
-      <div class="card-overlay"></div>
-      <div class="card-content">
-        <p class="card-country"><span class="card-country-flag">🇪🇸</span> Madrid</p>
-        <h3 class="card-title">Live Event Film</h3>
-        <p class="card-desc">Multi-camera coverage of a national televised gala. Cinematic edit delivered in 48 hours.</p>
-        <p class="card-credit">Miss Teen Spain</p>
-        <span class="card-link"><span class="card-line"></span>Watch film</span>
+    <a class="card card-h c-full" href="/work/the-world-outside/">
+      <div class="card-media">
+        <img src="/assets/films/ro/poster.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+        <video muted loop playsinline preload="none" data-loop data-src="/assets/films/ro/loop.mp4" aria-hidden="true" tabindex="-1"></video>
+        <span class="card-dur">1:00</span>
+      </div>
+      <div class="card-text">
+        <span class="idx">01</span>
+        <h3>The World Outside</h3>
+        <p class="meta">Outside the Rick Owens show · Independent editorial film · Paris · 2026</p>
       </div>
     </a>
-    <a href="https://www.instagram.com/adolfostudio" target="_blank" rel="noopener" class="work-card card-pt">
-      <div class="card-flag">🇵🇹</div>
-      <div class="card-overlay"></div>
-      <div class="card-content">
-        <p class="card-country"><span class="card-country-flag">🇵🇹</span> Lisbon</p>
-        <h3 class="card-title">Broadcast Production</h3>
-        <p class="card-desc">National final produced end to end — direction, camera, edit and brand identity.</p>
-        <p class="card-credit">Miss Best Portugal</p>
-        <span class="card-link"><span class="card-line"></span>Watch film</span>
+    <a class="card card-h c-wide" href="/work/broken-symmetry/">
+      <div class="card-media">
+        <img src="/assets/films/vanson/poster.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+        <video muted loop playsinline preload="none" data-loop data-src="/assets/films/vanson/loop.mp4" aria-hidden="true" tabindex="-1"></video>
+        <span class="card-dur">1:37</span>
+      </div>
+      <div class="card-text">
+        <span class="idx">02</span>
+        <h3>Broken Symmetry</h3>
+        <p class="meta">Vanson Leathers × Blackpicasso · Fashion film · Paris · SS27</p>
       </div>
     </a>
-    <a href="https://www.instagram.com/adolfostudio" target="_blank" rel="noopener" class="work-card card-fr">
-      <div class="card-flag">🇫🇷</div>
-      <div class="card-overlay"></div>
-      <div class="card-content">
-        <p class="card-country"><span class="card-country-flag">🇫🇷</span> Paris</p>
-        <h3 class="card-title">Fashion Editorial</h3>
-        <p class="card-desc">Editorial film shot on location. Natural light, slow motion, luxury pacing.</p>
-        <p class="card-credit">Private commission</p>
-        <span class="card-link"><span class="card-line"></span>Watch film</span>
+    <a class="card card-h c-side" href="/work/the-bureau-fashion-week/">
+      <div class="card-media">
+        <img src="/assets/films/bureau/poster.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+        <video muted loop playsinline preload="none" data-loop data-src="/assets/films/bureau/loop.mp4" aria-hidden="true" tabindex="-1"></video>
+        <span class="card-dur">1:31</span>
+      </div>
+      <div class="card-text">
+        <span class="idx">03</span>
+        <h3>The Bureau Fashion Week</h3>
+        <p class="meta">Fashion week film · Paris</p>
+      </div>
+    </a>
+    <a class="card card-v c-v1" href="/work/krissy-king/">
+      <div class="card-media">
+        <img src="/assets/films/krissy/poster.jpg" width="720" height="1280" alt="" loading="lazy" decoding="async">
+        <video muted loop playsinline preload="none" data-loop data-src="/assets/films/krissy/loop.mp4" aria-hidden="true" tabindex="-1"></video>
+        <span class="card-dur">0:40</span>
+      </div>
+      <div class="card-text">
+        <span class="idx">04</span>
+        <h3>Krissy King</h3>
+        <p class="meta">Collection film · Paris</p>
+      </div>
+    </a>
+    <a class="card card-v c-v2" href="/work/spring-colors/">
+      <div class="card-media">
+        <img src="/assets/films/spring/poster.jpg" width="720" height="1280" alt="" loading="lazy" decoding="async">
+        <video muted loop playsinline preload="none" data-loop data-src="/assets/films/spring/loop.mp4" aria-hidden="true" tabindex="-1"></video>
+        <span class="card-dur">0:23</span>
+      </div>
+      <div class="card-text">
+        <span class="idx">05</span>
+        <h3>Spring Colors</h3>
+        <p class="meta">Spring Colors Madrid · Fashion film · Madrid</p>
+      </div>
+    </a>
+    <a class="card card-v c-v3" href="/work/the-house-of-grace-huxley/">
+      <div class="card-media">
+        <img src="/assets/films/huxley/poster.jpg" width="720" height="1280" alt="" loading="lazy" decoding="async">
+        <video muted loop playsinline preload="none" data-loop data-src="/assets/films/huxley/loop.mp4" aria-hidden="true" tabindex="-1"></video>
+        <span class="card-dur">0:50</span>
+      </div>
+      <div class="card-text">
+        <span class="idx">06</span>
+        <h3>The House of Grace Huxley</h3>
+        <p class="meta">Collection film · Paris</p>
       </div>
     </a>
   </div>
-  <a href="https://www.instagram.com/adolfostudio" target="_blank" rel="noopener" class="work-footer">
-    <span class="work-footer-label">View full portfolio</span>
-    <span class="work-footer-handle">@adolfostudio</span>
-  </a>
 </section>
 
-<section id="numbers">
-  <div class="numbers-grid">
-    <div class="number-box">
-      <span class="number-value">3<span class="number-sup">+</span></span>
-      <span class="number-label">Countries<br>we shoot in</span>
+<section id="perspective" class="persp">
+  <p class="mono label">02 — Perspective</p>
+  <h2 class="serif persp-head">A signature is recognised by its decisions.</h2>
+  <ol class="persp-list">
+    <li><span class="mono">01</span><span><b>Intention</b> Which story is worth telling, decided before a single frame is shot.</span></li>
+    <li><span class="mono">02</span><span><b>Identity</b> Which details of a brand deserve the frame, and which are left out.</span></li>
+    <li><span class="mono">03</span><span><b>Perspective</b> Where the camera stands, and why. A point of view, not a formula.</span></li>
+    <li><span class="mono">04</span><span><b>Emotion</b> What remains once the film has ended.</span></li>
+    <li><span class="mono">05</span><span><b>Precision</b> When an image is allowed to breathe, and when it is cut.</span></li>
+  </ol>
+  <p class="serif persp-close">None of these decisions is visible on its own. Together, they are the signature.</p>
+</section>
+
+<section class="caps" aria-label="Disciplines">
+  <p class="mono label">03 — Disciplines</p>
+  <div class="caps-grid">
+    <div class="caps-col">
+      <p class="mono">Creative signature</p>
+      <h2 class="caps-name">Edwin Adolfo</h2>
+      <ul><li>Creative concept</li><li>Creative direction</li><li>Film direction</li><li>Fashion & editorial films</li><li>Brand films & campaigns</li></ul>
     </div>
-    <div class="number-box">
-      <span class="number-value">48<span class="number-sup">h</span></span>
-      <span class="number-label">Typical<br>delivery time</span>
-    </div>
-    <div class="number-box">
-      <span class="number-value">2<span class="number-sup">×</span></span>
-      <span class="number-label">Cinema-grade<br>camera setup</span>
+    <div class="caps-x" aria-hidden="true">×</div>
+    <div class="caps-col">
+      <p class="mono">Production structure</p>
+      <h2 class="caps-name caps-name-std">Adolfo Studio</h2>
+      <ul><li>Creative production</li><li>Crews assembled per project</li><li>Editing, colour & sound</li><li>Photography</li><li>Motion & VFX</li><li>Live events & broadcast</li></ul>
+      <p class="mono caps-note">Configured for each project, with collaborators chosen for what the idea requires.</p>
     </div>
   </div>
 </section>
 
-<section id="services">
-  <p class="section-label">What we make</p>
-  <ul class="service-list">
-    <li class="service-item"><span class="service-name">Brand films</span><span class="service-tag">Commercial</span></li>
-    <li class="service-item"><span class="service-name">Fashion &amp; editorial</span><span class="service-tag">Campaign</span></li>
-    <li class="service-item"><span class="service-name">Live events &amp; galas</span><span class="service-tag">Multi-camera</span></li>
-    <li class="service-item"><span class="service-name">Broadcast production</span><span class="service-tag">Television</span></li>
-    <li class="service-item"><span class="service-name">Social narrative</span><span class="service-tag">Purpose</span></li>
-  </ul>
-</section>
-
-<section id="clients">
-  <p class="clients-label">Sectors we work in</p>
-  <div class="clients-list">
-    <span class="client-name">Television &amp; broadcast</span>
-    <span class="client-name">Hospitality &amp; restaurants</span>
-    <span class="client-name">Fashion &amp; beauty</span>
-    <span class="client-name">Live events &amp; galas</span>
-    <span class="client-name">Non-profit &amp; social</span>
+<section id="studio" class="studio">
+  <div class="studio-intro">
+    <p class="mono label">04 — Adolfo Studio</p>
+    <h2 class="sec-title">Sized to the idea.</h2>
+    <p class="body">Adolfo Studio is where the signature becomes a production. For every project it brings together the people the idea calls for — crew, photography, editing, colour, motion — and no one it doesn’t, from an intimate editorial to a national final on stage.</p>
+    <p class="body">The team changes with each project. The direction doesn’t.</p>
+  </div>
+  <div class="studio-list">
+    <p class="mono label">Studio productions</p>
+    <ul>
+      <li><a class="row" href="/work/miss-best-portugal/">
+        <img src="/assets/films/misspt/poster.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+        <span class="mono row-idx">07</span>
+        <span class="row-title">Miss Best Portugal</span>
+        <span class="mono row-meta">Event film · Portugal</span>
+        <span class="row-arrow" aria-hidden="true">↗</span>
+      </a></li>
+      <li><a class="row" href="/work/fatima-bosch-in-madrid/">
+        <img src="/assets/films/fatima/poster.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+        <span class="mono row-idx">08</span>
+        <span class="row-title">Fátima Bosch in Madrid</span>
+        <span class="mono row-meta">Event film · Madrid</span>
+        <span class="row-arrow" aria-hidden="true">↗</span>
+      </a></li>
+      <li><a class="row" href="/work/fashion-eco-angels/">
+        <img src="/assets/films/eco/poster.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+        <span class="mono row-idx">09</span>
+        <span class="row-title">Fashion Eco Angels</span>
+        <span class="mono row-meta">Fashion film · Paris</span>
+        <span class="row-arrow" aria-hidden="true">↗</span>
+      </a></li>
+      <li><a class="row" href="/work/lamego-real-estate/">
+        <img src="/assets/films/inmo/poster.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+        <span class="mono row-idx">10</span>
+        <span class="row-title">Lamego</span>
+        <span class="mono row-meta">Real estate film · Portugal</span>
+        <span class="row-arrow" aria-hidden="true">↗</span>
+      </a></li>
+      <li><a class="row" href="/work/miss-teen-spain/">
+        <img src="/assets/films/angeles/poster.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+        <span class="mono row-idx">11</span>
+        <span class="row-title">Miss Teen Spain</span>
+        <span class="mono row-meta">Event film</span>
+        <span class="row-arrow" aria-hidden="true">↗</span>
+      </a></li>
+    </ul>
   </div>
 </section>
 
-<section id="contact">
-  <h2 class="contact-headline">Does your brand<br>deserve to be<br><em>remembered?</em></h2>
-  <p class="contact-sub">Tell us about your project. We work across Spain, Portugal and France and respond within 24 hours.</p>
-
-  <form class="contact-form" id="contactForm" action="https://formspree.io/f/moeqnpoo" method="POST">
-    <div class="form-row two">
-      <div class="form-group">
-        <label class="form-label" for="name">Name</label>
-        <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="email">Email</label>
-        <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
-      </div>
+<section id="edwin" class="about">
+  <p class="mono label">05 — Edwin Adolfo</p>
+  <div class="about-grid">
+    <h2 class="serif about-head">A way of looking.</h2>
+    <div>
+      <p class="body">Edwin Adolfo is a creative director and filmmaker for fashion and brands, based in Madrid and working internationally.</p>
+      <p class="body">His work across Spain, Portugal and France has given him a close reading of different creative cultures, markets and ways of working. Each project starts from its own identity and context; where it happens is never the limit of the idea.</p>
+      <p class="body">Cameras and software can be hired. What a brand commissions from him is judgement: how to look at the brand, and how to understand the business behind it.</p>
+      <dl class="facts">
+        <div><dt class="mono">Based in</dt><dd>Madrid</dd></div><div><dt class="mono">Working</dt><dd>Worldwide</dd></div><div><dt class="mono">Experience</dt><dd>Spain · Portugal · France</dd></div><div><dt class="mono">Production</dt><dd>Adolfo Studio</dd></div>
+      </dl>
     </div>
-    <div class="form-row two">
-      <div class="form-group">
-        <label class="form-label" for="company">Company / Brand</label>
-        <input class="form-input" type="text" id="company" name="company" placeholder="Your brand or event">
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="country">Country</label>
-        <select class="form-select" id="country" name="country">
-          <option value="">Select country</option>
-          <option>Spain</option>
-          <option>Portugal</option>
-          <option>France</option>
-          <option>Other</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label" for="service">Type of production</label>
-        <select class="form-select" id="service" name="service">
-          <option value="">What do you need?</option>
-          <option>Brand film</option>
-          <option>Fashion &amp; editorial</option>
-          <option>Gala or event</option>
-          <option>Pageant or beauty</option>
-          <option>Social narrative / NGO</option>
-          <option>Not sure yet</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label" for="message">Tell us about your project</label>
-        <textarea class="form-textarea" id="message" name="message" placeholder="What do you want to create? Any dates, locations or references that help us understand your vision…"></textarea>
-      </div>
-    </div>
-    <input type="hidden" name="_subject" value="New project enquiry — Adolfo Studio">
-    <button type="submit" class="form-submit" id="submitBtn">Send enquiry &nbsp;→</button>
-  </form>
-
-  <div class="form-success" id="formSuccess">
-    <div class="form-success-mark">◈</div>
-    <div class="form-success-title">Message received.</div>
-    <div class="form-success-sub">We'll be in touch within 24 hours.</div>
-  </div>
-
-  <div class="form-alt">
-    <span class="form-alt-label">Prefer direct contact?</span>
-    <a href="mailto:adolfoestudio@gmail.com" class="form-alt-link">adolfoestudio@gmail.com</a>
-    <a href="https://wa.me/34617969909" target="_blank" rel="noopener" class="form-alt-link">WhatsApp</a>
   </div>
 </section>
 
-<footer>
-  <span class="footer-brand">© 2026 Adolfo Studio · Edwin Adolfo</span>
-  <div class="footer-links">
-    <a href="https://www.instagram.com/adolfostudio" target="_blank" rel="noopener" class="footer-link">Instagram</a>
-    <a href="https://wa.me/34617969909" target="_blank" rel="noopener" class="footer-link">WhatsApp</a>
+<section id="contact" class="contact">
+  <p class="mono label">06 — Contact</p>
+  <h2 class="contact-head">What does your brand need to say?</h2>
+  <p class="body contact-sub">For fashion designers, brands, creative directors and agencies — wherever the project takes place.</p>
+  <div class="contact-grid">
+    <form class="form" id="contactForm" action="https://formspree.io/f/moeqnpoo" method="POST" data-sending="Sending…" data-error="Not sent. Please try again.">
+      <label><span class="mono">Name</span><input type="text" name="name" autocomplete="name" required></label>
+      <label><span class="mono">Email</span><input type="email" name="email" autocomplete="email" required></label>
+      <label><span class="mono">Brand</span><input type="text" name="company" autocomplete="organization"></label>
+      <label class="full"><span class="mono">Project type</span><select name="project_type"><option value="">Select</option><option>Creative direction</option><option>Fashion / editorial film</option><option>Brand film / campaign</option><option>Creative production</option><option>Collaboration / other</option></select></label>
+      <label class="full"><span class="mono">Project, dates, location, references</span><textarea name="message" rows="4" required></textarea></label>
+      <input type="hidden" name="_subject" value="New project enquiry — Edwin Adolfo × Adolfo Studio">
+      <button type="submit" class="btn">Send <span aria-hidden="true">→</span></button>
+      <p class="form-ok" role="status" hidden>Received. You’ll hear back soon.</p>
+    </form>
+    <div class="direct">
+      <p class="mono">Or write directly</p>
+      <a href="mailto:adolfoestudio@gmail.com">adolfoestudio@gmail.com</a>
+      <a href="https://wa.me/34617969909" target="_blank" rel="noopener">WhatsApp ↗</a>
+      <a href="https://www.instagram.com/adolfostudio/" target="_blank" rel="noopener">Instagram @adolfostudio ↗</a>
+    </div>
   </div>
+</section>
+
+</main>
+<footer class="foot">
+  <p class="foot-credits"><span>A film by</span> Edwin Adolfo <i>/</i> <span>Produced by</span> Adolfo Studio</p>
+  <p class="foot-links"><a href="https://www.instagram.com/adolfostudio/" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/34617969909" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:adolfoestudio@gmail.com">Email</a></p>
+  <p class="foot-legal">© 2026 Edwin Adolfo × Adolfo Studio · Madrid — Worldwide</p>
 </footer>
-
-<script>
-(function() {
-  var form = document.getElementById('contactForm');
-  var success = document.getElementById('formSuccess');
-  var btn = document.getElementById('submitBtn');
-  if (!form) return;
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(function(res) {
-      if (res.ok) {
-        form.style.display = 'none';
-        success.classList.add('show');
-      } else {
-        btn.disabled = false;
-        btn.innerHTML = 'Error — try again &nbsp;→';
-      }
-    })
-    .catch(function() {
-      btn.disabled = false;
-      btn.innerHTML = 'Error — try again &nbsp;→';
-    });
-  });
-})();
-</script>
+<script src="/assets/js/site.js" defer></script>
 </body>
 </html>
