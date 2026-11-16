@@ -2,6 +2,8 @@
 // Pages static assets ignore `Range` headers (they always answer 200 with the whole file).
 // Safari/iOS need 206 Partial Content to play and seek MP4, so .mp4 requests under
 // /assets/films/ are answered here; every other file falls through to the static asset.
+import SIZES from '../../../lib/film-sizes.js';
+
 const CACHE = 'public, max-age=86400, stale-while-revalidate=604800';
 
 function parseRange(header, size) {
@@ -33,7 +35,7 @@ export async function onRequest({ request, env, next }) {
   if (!url.pathname.endsWith('.mp4') || (request.method !== 'GET' && request.method !== 'HEAD')) return next();
 
   const asset = await env.ASSETS.fetch(new Request(url.toString())); // whole file, no Range
-  const size = Number(asset.headers.get('content-length'));
+  const size = Number(asset.headers.get('content-length')) || SIZES[url.pathname] || 0;
   if (!asset.ok || !asset.body || !size) return asset;
 
   const headers = new Headers(asset.headers);
@@ -54,5 +56,11 @@ export async function onRequest({ request, env, next }) {
   headers.set('content-range', `bytes ${range.start}-${range.end}/${size}`);
   headers.set('content-length', String(range.end - range.start + 1));
   if (request.method === 'HEAD') { asset.body.cancel(); return new Response(null, { status: 206, headers }); }
-  return new Response(slice(asset.body, range.start, range.end), { status: 206, headers });
+  let body = slice(asset.body, range.start, range.end);
+  if (typeof FixedLengthStream === 'function') { // Workers runtime: guarantees an exact Content-Length
+    const fixed = new FixedLengthStream(range.end - range.start + 1);
+    body.pipeTo(fixed.writable).catch(() => {});
+    body = fixed.readable;
+  }
+  return new Response(body, { status: 206, headers });
 }
